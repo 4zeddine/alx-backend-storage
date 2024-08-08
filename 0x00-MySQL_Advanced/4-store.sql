@@ -1,4 +1,4 @@
---script that creates a trigger that decreases the quantity of an item after adding a new order.
+-- script that creates a trigger that decreases the quantity of an item.
 DROP TRIGGER IF EXISTS quantity_reduced;
 DELIMITER $$
 CREATE TRIGGER quantity_reduced
@@ -9,4 +9,4 @@ BEGIN
         SET quantity = quantity - NEW.number
         WHERE name = NEW.item_name;
 END $$
-DELIMITER;
+DELIMITER ;
